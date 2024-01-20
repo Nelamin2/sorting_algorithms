@@ -6,15 +6,18 @@
  */
 void swap_insert(listint_t *x, listint_t *y)
 {
-if (a->prev)
-a->prev->next = b;
-if (b->next)
+if (!x || !y)
+return;
+if (x->prev)
+x->prev->next = y;
+if (y->next)
 {
-b->next->prev = a;
-a->next = b->next;
-b->prev = a->prev;
-a->prev = b;
-b->next = a;
+y->next->prev = x;
+x->next = y->next;
+y->prev = x->prev;
+x->prev = y;
+y->next = x;
+}
 }
 /**
  * insertion_sort_list - performs insertuin Sorts on a
@@ -35,12 +38,13 @@ while (k && k->prev)
 {
 if (k->prev->n > k->n)
 {
-swap(j->prev, j);
-*list = j;
-print_list((const listint_t *)*list)
+swap_insert(k->prev, k);
+if (!k->prev)
+*list = k;
+print_list((const listint_t *)*list);
 }
 else
-j = j->Prev;
+k = k->prev;
 }
 }
 }
