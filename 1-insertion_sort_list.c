@@ -11,13 +11,11 @@ return;
 if (x->prev)
 x->prev->next = y;
 if (y->next)
-{
 y->next->prev = x;
 x->next = y->next;
 y->prev = x->prev;
 x->prev = y;
 y->next = x;
-}
 }
 /**
  * insertion_sort_list - performs insertuin Sorts on a
