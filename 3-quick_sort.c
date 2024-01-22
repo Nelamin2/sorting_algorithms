@@ -9,7 +9,7 @@ void lomuto_sorting_func(int *array, size_t size, int low, int high);
  * @x: The first integer to swap.
  * @y: The second integer to swap.
  */
-void swap_quick( int *x, int *y)
+void swap_quick(int *x, int *y)
 {
 int temp;
 temp = *x;
@@ -21,8 +21,8 @@ temp = *x;
  * the lomuto partition scheme (last element as pivot).
  * @array: The array of integers.
  * @size: The size of the array.
- * @left: The starting index of the subset to order.
- * @right: The ending index of the subset to order.
+ * @low: The starting index of the subset to order.
+ * @high: The ending index of the subset to order.
  * Return: The final partition index.
  */
 int lomuto_partitioner(int *array, size_t size, int low, int high)
@@ -49,7 +49,7 @@ print_array(array, size);
 return (i);
 }
 /**
- * lomuto_sort-scheme - the quicksort algorithm through recursion.
+ * lomuto_sort_scheme - the quicksort algorithm through recursion.
  * @array: An array of integers to sort.
  * @size: The size of the array.
  * @low: The starting index of the array partition to order.
