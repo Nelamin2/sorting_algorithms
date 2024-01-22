@@ -30,8 +30,9 @@ int lomuto_partitioner(int *array, size_t size, int low, int high)
 int pivot, i, j;
 pivot = array[high];
 for (i = j = low; j < high; j++)
-if (array[j] < pivot)
-swap_quick(&array[j], &array[i++]);
+	if (array[j] < pivot)
+	{swap_quick(&array[j], &array[i++]);
+                print_array(array, size);}
 swap_quick(&array[i], &array[high]);
 print_array(array, size);
 return (i);
