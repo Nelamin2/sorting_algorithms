@@ -1,6 +1,6 @@
 #include "sort.h"
 
-void swap_quick(int *array, size_t size, int *x, int *y);
+void swap_quick(int *x, int *y);
 int lomuto_partitioner(int *array, size_t size, int low, int high);
 void lomuto_sorting_func(int *array, size_t size, int low, int high);
 
@@ -9,17 +9,16 @@ void lomuto_sorting_func(int *array, size_t size, int low, int high);
  * @x: The first integer to swap.
  * @y: The second integer to swap.
  */
-void swap_quick(int *array, size_t size, int *x, int *y)
+void swap_quick( int *x, int *y)
 {
 int temp;
 temp = *x;
 *x = *y;
 *y = temp;
-print_array((const int *)array, size);
 }
 /**
  * lomuto_partitioner - Order a subset of an array of integers according to
- *                    the lomuto partition scheme (last element as pivot).
+ * the lomuto partition scheme (last element as pivot).
  * @array: The array of integers.
  * @size: The size of the array.
  * @left: The starting index of the subset to order.
@@ -30,11 +29,11 @@ int lomuto_partitioner(int *array, size_t size, int low, int high)
 {
 int pivot, i, j;
 pivot = array[high];
-for (i = j = low; j < high; low++)
+for (i = j = low; j < high; j++)
 if (array[j] < pivot)
-if (j < i)
-swap_quick(array, size, &array[j], &array[i++]);
-swap_quick(array, size, &array[i], &array[high]);
+swap_quick(&array[j], &array[i++]);
+swap_quick(&array[i], &array[high]);
+print_array(array, size);
 return (i);
 }
 /**
