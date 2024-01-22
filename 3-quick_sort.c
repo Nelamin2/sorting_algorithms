@@ -2,7 +2,7 @@
 
 void swap_quick(int *x, int *y);
 int lomuto_partitioner(int *array, size_t size, int low, int high);
-void lomuto_sorting_func(int *array, size_t size, int low, int high);
+void lomuto_sorting_scheme(int *array, size_t size, int low, int high);
 
 /**
  * swap_quick - Swap two integers in an array.
@@ -49,7 +49,7 @@ print_array(array, size);
 return (i);
 }
 /**
- * lomuto_sort_scheme - the quicksort algorithm through recursion.
+ * lomuto_sorting_scheme - the quicksort algorithm through recursion.
  * @array: An array of integers to sort.
  * @size: The size of the array.
  * @low: The starting index of the array partition to order.
