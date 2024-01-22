@@ -25,31 +25,28 @@ temp = *x;
  * @right: The ending index of the subset to order.
  * Return: The final partition index.
  */
-int lomuto_partition(int *array, size_t size, int low, int high)
+int lomuto_partitioner(int *array, size_t size, int low, int high)
 {
-	int *pivot, i, j;
-
-	pivot = array + high;
-	for (i = j = low; j < high; j++)
-	{
-		if (array[j] < *pivot)
-		{
-			if (i < j)
-			{
-				swap_quick(array + j, array + i);
-				print_array(array, size);
-			}
-			i++;
-		}
-	}
-
-	if (array[i] > *pivot)
-	{
-		swap_quick(array + i, pivot);
-		print_array(array, size);
-	}
-
-	return (i);
+int *pivot, i, j;
+pivot = array + high;
+for (i = j = low; j < high; j++)
+{
+if (array[j] < *pivot)
+{
+if (i < j)
+{
+swap_quick(array + j, array + i);
+print_array(array, size);
+}
+i++;
+}
+}
+if (array[i] > *pivot)
+{
+swap_quick(array + i, pivot);
+print_array(array, size);
+}
+return (i);
 }
 /**
  * lomuto_sort-scheme - the quicksort algorithm through recursion.
