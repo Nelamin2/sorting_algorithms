@@ -35,6 +35,7 @@ for (i = j = low; j < high; j++)
                 print_array(array, size);}
 swap_quick(&array[i], &array[high]);
 print_array(array, size);
+
 return (i);
 }
 /**
