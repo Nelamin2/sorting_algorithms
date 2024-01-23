@@ -9,7 +9,9 @@ void siftdown(int *array, size_t start, size_t end, size_t size);
  * swap_heap - Swap two integers in an array.
  * @x: The first integer to swap.
  * @y: The second integer to swap.
- */
+ * @size: the size of the array.
+ * @array: the array to be arranged.
+ **/
 void swap_heap(int *array, size_t size, int *x, int *y)
 {
 int temp;
