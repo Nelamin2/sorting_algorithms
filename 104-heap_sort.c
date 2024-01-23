@@ -32,7 +32,7 @@ void heapify(int *array, size_t size)
 {
 size_t start;
 start = parent(size - 1);
-while (start <= 0)
+while (start >= 0)
 {
 siftdown(array, start, size - 1, size);
 start--;
