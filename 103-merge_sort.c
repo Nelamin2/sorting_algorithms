@@ -20,14 +20,14 @@ print_array(array + start, mid - start);
 printf("[right]: ");
 print_array(array + mid, stop - mid);
 for (k = start; k < stop; k++)
-	if (i < mid && (j >= stop || (array[i] <= array[j])))
-	{
-		new[k] = array[i++];
-        }
-	else
-        {
-		new[k] = array[j++];
-        }
+if (i < mid && (j >= stop || (array[i] <= array[j])))
+{
+new[k] = array[i++];
+}
+else
+{
+new[k] = array[j++];
+}
 printf("[Done]: ");
 print_array(array + start, stop - start);
 
