@@ -30,7 +30,7 @@ print_array((const int *)array, size);
  */
 void heapify(int *array, size_t size)
 {
-size_t start;
+ssize_t start;
 start = parent(size - 1);
 while (start >= 0)
 {
@@ -48,20 +48,20 @@ start--;
  */
 void siftdown(int *array, size_t start, size_t end, size_t size)
 {
-size_t root, swap, child;
+size_t root, _swap, child;
 root = start;
 while (leftchild(root) <= end)
 {
 child = leftchild(root);
-swap = root;
-if (array[swap] < array[child])
-swap = child;
-if (child + 1 <= end && array[swap] < array[child + 1])
-swap = child + 1;
-if (swap == root)
+_swap = root;
+if (array[_swap] < array[child])
+_swap = child;
+if (child + 1 <= end && array[_swap] < array[child + 1])
+_swap = child + 1;
+if (_swap == root)
 return;
-swap_heap(array, size, &array[root], &array[swap]);
-root = swap;
+swap_heap(array, size, &array[root], &array[_swap]);
+root = _swap;
 }
 }
 /**
