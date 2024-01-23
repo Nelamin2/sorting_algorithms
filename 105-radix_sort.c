@@ -32,7 +32,7 @@ int find_max(int *array, int size)
  * @sig: The significant digit to sort on.
  * @new: A buffer to store the sorted array.
  */
-void radix_counting_sort(int *array, size_t size, int sig, int *new)
+void radix_counting(int *array, size_t size, int sig, int *new)
 {
 	int count[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 	size_t i;
@@ -50,7 +50,7 @@ void radix_counting_sort(int *array, size_t size, int sig, int *new)
 	}
 
 	for (i = 0; i < size; i++)
-		array[i] = buff[i];
+		array[i] = new[i];
 }
 
 /**
@@ -67,7 +67,7 @@ void radix_sort(int *array, size_t size)
 		return;
 
 	new = malloc(sizeof(int) * size);
-	if (buff == NULL)
+	if (new == NULL)
 		return;
 
 	max = find_max(array, size);
