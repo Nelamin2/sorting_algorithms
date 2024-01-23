@@ -30,7 +30,6 @@ new[k] = array[j++];
 }
 printf("[Done]: ");
 print_array(array + start, stop - start);
-
 }
 /**
  * merge_sort_rec - Implement the merge sort algorithm through recursion.
